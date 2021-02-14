@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
-// "apple orange apple apple oange orange grape apple"
+/*
+Input: apple orange apple apple oange orange grape apple
+Output: {oange 1} {grape 1} {orange 2} {apple 4}
+*/
 
-func sort() {
-	str := "apple orange apple apple oange orange grape apple"
-	slice := strings.Split(str, " ")
+func SortString(s string) {
+	slice := strings.Split(s, " ")
 	m := map[string]int{}
 	for _, v := range slice {
 		if _, ok := m[v]; !ok {
