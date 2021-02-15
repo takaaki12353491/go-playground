@@ -1,9 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+var sc = bufio.NewScanner(os.Stdin)
 
 func main() {
-	sum := SumUpDividors(30)
-	SortString("apple orange apple apple oange orange grape apple")
-	fmt.Println(sum)
+	var s string
+	if sc.Scan() {
+		s = sc.Text()
+	}
+	fmt.Println(s)
 }
