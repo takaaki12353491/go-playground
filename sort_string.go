@@ -19,7 +19,7 @@ func SortString(s string) {
 			m[v] = 1
 			continue
 		}
-		m[v] = m[v] + 1
+		m[v] += 1
 	}
 	entries := []Entry{}
 	for k, v := range m {
