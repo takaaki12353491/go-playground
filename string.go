@@ -6,6 +6,20 @@ import (
 	"strings"
 )
 
+func CountDuplicate(s string) int {
+	slice := strings.Split(s, "")
+	count := 0
+	checked := map[string]bool{}
+	for _, v := range slice {
+		if _, ok := checked[v]; ok {
+			count++
+			continue
+		}
+		checked[v] = true
+	}
+	return count
+}
+
 /*
 Input: apple orange apple apple oange orange grape apple
 Output: {oange 1} {grape 1} {orange 2} {apple 4}

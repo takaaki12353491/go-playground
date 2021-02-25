@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/csv"
-	"fmt"
 	"io"
 	"log"
 	"math"
@@ -26,7 +25,6 @@ func CSVAverage(s string) map[string]float64 {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("%#v\n", line)
 		for k, v := range line {
 			score, err := strconv.Atoi(v)
 			if err != nil {
