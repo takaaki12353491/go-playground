@@ -7,11 +7,11 @@ import (
 	"strings"
 )
 
-func FizzBuzz(num int) string {
+func FizzBuzz(num, f, b int) string {
 	res := ""
 	for i := 1; i <= num; i++ {
-		d3 := i % 3
-		d5 := i % 5
+		d3 := i % f
+		d5 := i % b
 		if d3 == 0 && d5 == 0 {
 			res += "FizzBuzz"
 		} else if d3 == 0 {

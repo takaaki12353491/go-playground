@@ -13,6 +13,5 @@ func main() {
 	if sc.Scan() {
 		s = sc.Text()
 	}
-	s = FizzBuzz(15)
 	fmt.Println(s)
 }

@@ -6,12 +6,18 @@ import (
 )
 
 func TestFizzBuzz(t *testing.T) {
-	res := FizzBuzz(15)
+	res := FizzBuzz(15, 3, 5)
 	FizzBuzz := strings.Count(res, "FizzBuzz")
 	Fizz := strings.Count(res, "Fizz") - FizzBuzz
 	Buzz := strings.Count(res, "Buzz") - FizzBuzz
-	if FizzBuzz != 1 || Fizz != 4 || Buzz != 2 {
-		t.Errorf("Expected Fizz:%d, Buzz:%d, FizzBuzz:%d", 4, 2, 1)
+	exFizzBuzz := 1
+	exFizz := 4
+	exBuzz := 2
+	if FizzBuzz != exFizzBuzz || Fizz != exFizz || Buzz != exBuzz {
+		t.Errorf(
+			"Expected FizzBuzz:%d, Fizz:%d, Buzz:%d but FizzBuzz:%d, Fizz:%d, Buzz:%d",
+			exFizzBuzz, exFizz, exBuzz, FizzBuzz, Fizz, Buzz,
+		)
 	}
 }
 
