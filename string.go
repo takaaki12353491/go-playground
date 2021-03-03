@@ -6,6 +6,15 @@ import (
 	"strings"
 )
 
+func Reverse(s string) string {
+	res := ""
+	slice := strings.Split(s, "")
+	for k := range slice {
+		res += slice[len(slice)-1-k]
+	}
+	return res
+}
+
 func CountDuplicate(s string) int {
 	slice := strings.Split(s, "")
 	count := 0
