@@ -9,8 +9,8 @@ import (
 func Reverse(s string) string {
 	res := ""
 	slice := strings.Split(s, "")
-	for k := range slice {
-		res += slice[len(slice)-1-k]
+	for i := len(slice) - 1; i >= 0; i-- {
+		res += slice[i]
 	}
 	return res
 }
