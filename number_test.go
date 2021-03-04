@@ -1,23 +1,30 @@
 package main
 
 import (
-	"strings"
 	"testing"
 )
 
 func TestFizzBuzz(t *testing.T) {
-	res := FizzBuzz(15, 3, 5)
-	FizzBuzz := strings.Count(res, "FizzBuzz")
-	Fizz := strings.Count(res, "Fizz") - FizzBuzz
-	Buzz := strings.Count(res, "Buzz") - FizzBuzz
-	exFizzBuzz := 1
-	exFizz := 4
-	exBuzz := 2
-	if FizzBuzz != exFizzBuzz || Fizz != exFizz || Buzz != exBuzz {
-		t.Errorf(
-			"Expected FizzBuzz:%d, Fizz:%d, Buzz:%d but FizzBuzz:%d, Fizz:%d, Buzz:%d",
-			exFizzBuzz, exFizz, exBuzz, FizzBuzz, Fizz, Buzz,
-		)
+	f := FizzBuzz(3, 5)
+	res := f(1)
+	ex := "1"
+	if res != ex {
+		t.Errorf("Expected %s, but %s", ex, res)
+	}
+	res = f(3)
+	ex = "Fizz"
+	if res != ex {
+		t.Errorf("Expected %s, but %s", ex, res)
+	}
+	res = f(5)
+	ex = "Buzz"
+	if res != ex {
+		t.Errorf("Expected %s, but %s", ex, res)
+	}
+	res = f(15)
+	ex = "FizzBuzz"
+	if res != ex {
+		t.Errorf("Expected %s, but %s", ex, res)
 	}
 }
 

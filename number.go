@@ -7,23 +7,19 @@ import (
 	"strings"
 )
 
-func FizzBuzz(num, f, b int) string {
-	res := ""
-	for i := 1; i <= num; i++ {
-		d3 := i % f
-		d5 := i % b
-		if d3 == 0 && d5 == 0 {
-			res += "FizzBuzz"
-		} else if d3 == 0 {
-			res += "Fizz"
-		} else if d5 == 0 {
-			res += "Buzz"
-		} else {
-			res += strconv.Itoa(i)
+func FizzBuzz(f, b int) func(int) string {
+	return func(n int) string {
+		df := n % f
+		db := n % b
+		if df == 0 && db == 0 {
+			return "FizzBuzz"
+		} else if df == 0 {
+			return "Fizz"
+		} else if db == 0 {
+			return "Buzz"
 		}
-		res += "\n"
+		return strconv.Itoa(n)
 	}
-	return res
 }
 
 func Fibonacci(num int) int {
